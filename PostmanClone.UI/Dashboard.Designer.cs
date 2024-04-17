@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            SuspendLayout();
+            // 
+            // Dashboard
+            // 
+            AutoScaleDimensions = new SizeF(21F, 41F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1680, 738);
+            Font = new Font("CaskaydiaCove NF", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            Margin = new Padding(6, 5, 6, 5);
+            Name = "Dashboard";
+            Text = "Postman Clone by Adrian Puscasu";
+            ResumeLayout(false);
         }
 
         #endregion
