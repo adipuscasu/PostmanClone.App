@@ -1,28 +1,55 @@
 ﻿using Flurl.Http;
-using Flurl.Http.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PostmanClone.Library.Enums;
+using System.Text.Json;
 
-namespace PostmanClone.Library.Services
+namespace PostmanClone.Library.Services;
+
+public class ApiService : IApiService
 {
-    public class ApiService
+    public async Task<string> CallApiAsync(
+        string url, 
+        bool formatOutput = true, 
+        HttpAction httpAction = HttpAction.Get
+        )
     {
-
-        public async Task<IFlurlResponse> MakeGetRequest(string url)
+        var response = await MakeRequestAsync(url, new HttpMethod("Get"));
+        var stringResult = response.GetStringAsync().Result;
+        if (response is null)
         {
-            try
+            return string.Empty;
+        }
+
+        if (formatOutput)
+        {
+            var jsonElement = JsonSerializer.Deserialize<JsonElement>(stringResult);
+            var prettyJson = JsonSerializer.Serialize(jsonElement,
+                            new JsonSerializerOptions { WriteIndented = true });
+            return prettyJson.ToString();
+        }
+        else { return stringResult; }
+    }
+
+    public async Task<IFlurlResponse> MakeRequestAsync(string url, HttpMethod httpMethod)
+    {
+        try
+        {
+            IFlurlResponse response;
+
+            switch (httpMethod.Method)
             {
-                var response = await url.GetAsync();
-                return response;
+                case "Get":
+                    response = await url.GetAsync();
+                    break;
+                default:
+                    throw new Exception("Method not configured");
+
             }
-            catch (FlurlHttpException ex)
-            {
-                // log the error
-                throw;
-            }
+            return response;
+        }
+        catch (FlurlHttpException ex)
+        {
+            // log the error
+            throw;
         }
     }
 }

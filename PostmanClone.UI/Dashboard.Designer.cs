@@ -65,6 +65,7 @@
             apiText.Name = "apiText";
             apiText.Size = new Size(1081, 49);
             apiText.TabIndex = 2;
+            apiText.KeyDown += apiText_KeyDown;
             // 
             // callApi
             // 
@@ -90,8 +91,8 @@
             // 
             // statusStrip
             // 
-            statusStrip.ImageScalingSize = new Size(24, 24);
             statusStrip.BackColor = Color.White;
+            statusStrip.ImageScalingSize = new Size(24, 24);
             statusStrip.Items.AddRange(new ToolStripItem[] { systemStatus });
             statusStrip.Location = new Point(0, 686);
             statusStrip.Name = "statusStrip";
