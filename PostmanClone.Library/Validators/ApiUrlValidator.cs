@@ -20,7 +20,7 @@ public class ApiUrlValidator : AbstractValidator<string>
     {
         if(string.IsNullOrWhiteSpace(url)) return false;
 
-        return Uri.TryCreate(url, UriKind.Absolute, out Uri result) 
+        return Uri.TryCreate(url, UriKind.Absolute, out var result) 
             && result?.Scheme == Uri.UriSchemeHttps;
     }
 }
