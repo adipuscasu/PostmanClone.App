@@ -49,6 +49,8 @@ public class ApiService : IApiService
         catch (FlurlHttpException ex)
         {
             // log the error
+            // TODO add Serilog
+            await Console.Out.WriteLineAsync(ex.Message);
             throw;
         }
     }
