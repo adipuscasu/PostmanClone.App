@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             formHeader = new Label();
             apiLabel = new Label();
             apiText = new TextBox();
@@ -131,6 +132,7 @@
             Controls.Add(formHeader);
             Font = new Font("CaskaydiaCove NF", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedDialog;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(6, 5, 6, 5);
             Name = "Dashboard";
             Text = "Postman Clone by Adrian Puscasu";
