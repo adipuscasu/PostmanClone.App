@@ -8,7 +8,7 @@
 Builds a WinForms application that can call APIs and display the results.
 This solution uses several libraries:
 * [Flurl](https://github.com/tmenier/Flurl)
-* [Fluent Validation](https://github.com/FluentValidation/FluentValidation)
+* [FluentValidation](https://github.com/FluentValidation/FluentValidation)
 * [FluentAssertions](https://github.com/fluentassertions/fluentassertions)
 
 ## Usage
