@@ -15,8 +15,12 @@
     <DelaySign>True</DelaySign>
     <ApplicationIcon>postman_icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+      <RuntimeIdentifiers>win-x64;win-x86</RuntimeIdentifiers>
+  </PropertyGroup>
 
-  <ItemGroup>
+
+    <ItemGroup>
     <Content Include="postman_icon.ico" />
   </ItemGroup>
 
