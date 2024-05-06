@@ -1,5 +1,7 @@
 # PostmanClone.App
 
+This application mimics the functionalities of the original Postman tool, offering features for testing and debugging APIs. It allows users to execute API requests, inspect responses in a streamlined interface.
+
 [![.NET Core Desktop](https://github.com/adipuscasu/PostmanClone.App/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/adipuscasu/PostmanClone.App/actions/workflows/dotnet-desktop.yml)
 
 ![image](https://github.com/adipuscasu/PostmanClone.App/assets/7973905/f2b506a1-1b0f-4ea1-9e38-48a35439c2c7)
