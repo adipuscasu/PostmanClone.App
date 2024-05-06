@@ -6,10 +6,14 @@
 
 ## Purpose
 Builds a WinForms application that can call APIs and display the results.
+Technologies used:
+* C#
+* .NET 8
+* WinForms
 This solution uses several libraries:
-* [Flurl](https://github.com/tmenier/Flurl)
-* [FluentValidation](https://github.com/FluentValidation/FluentValidation)
-* [FluentAssertions](https://github.com/fluentassertions/fluentassertions)
+* [Flurl](https://github.com/tmenier/Flurl) - for doing the HTTP calls
+* [FluentValidation](https://github.com/FluentValidation/FluentValidation) - for implementing HTTP URL validation
+* [FluentAssertions](https://github.com/fluentassertions/fluentassertions) - for easier to understand unit tests
 
 ## Usage
 TODO - research how to use the MSIX package
