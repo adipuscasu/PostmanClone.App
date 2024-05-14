@@ -33,12 +33,16 @@
             apiLabel = new Label();
             apiText = new TextBox();
             callApi = new Button();
-            resultsText = new TextBox();
             statusStrip = new StatusStrip();
             systemStatus = new ToolStripStatusLabel();
-            resultsLabel = new Label();
             httpMethodSelection = new ComboBox();
+            callData = new TabControl();
+            bodyTab = new TabPage();
+            resultsTab = new TabPage();
+            resultsText = new TextBox();
             statusStrip.SuspendLayout();
+            callData.SuspendLayout();
+            resultsTab.SuspendLayout();
             SuspendLayout();
             // 
             // formHeader
@@ -71,25 +75,13 @@
             // 
             // callApi
             // 
-            callApi.Location = new Point(1236, 89);
+            callApi.Location = new Point(1236, 102);
             callApi.Name = "callApi";
-            callApi.Size = new Size(112, 49);
+            callApi.Size = new Size(112, 36);
             callApi.TabIndex = 3;
             callApi.Text = "Go";
             callApi.UseVisualStyleBackColor = true;
             callApi.Click += callApi_Click;
-            // 
-            // resultsText
-            // 
-            resultsText.BackColor = Color.White;
-            resultsText.BorderStyle = BorderStyle.FixedSingle;
-            resultsText.Location = new Point(43, 205);
-            resultsText.Multiline = true;
-            resultsText.Name = "resultsText";
-            resultsText.ReadOnly = true;
-            resultsText.ScrollBars = ScrollBars.Both;
-            resultsText.Size = new Size(1305, 478);
-            resultsText.TabIndex = 4;
             // 
             // statusStrip
             // 
@@ -109,15 +101,6 @@
             systemStatus.Size = new Size(72, 30);
             systemStatus.Text = "Ready";
             // 
-            // resultsLabel
-            // 
-            resultsLabel.AutoSize = true;
-            resultsLabel.Location = new Point(43, 151);
-            resultsLabel.Name = "resultsLabel";
-            resultsLabel.Size = new Size(110, 28);
-            resultsLabel.TabIndex = 6;
-            resultsLabel.Text = "Results";
-            // 
             // httpMethodSelection
             // 
             httpMethodSelection.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -128,16 +111,59 @@
             httpMethodSelection.Size = new Size(122, 36);
             httpMethodSelection.TabIndex = 7;
             // 
+            // callData
+            // 
+            callData.Controls.Add(bodyTab);
+            callData.Controls.Add(resultsTab);
+            callData.Location = new Point(31, 144);
+            callData.Name = "callData";
+            callData.SelectedIndex = 0;
+            callData.Size = new Size(1328, 556);
+            callData.TabIndex = 8;
+            // 
+            // bodyTab
+            // 
+            bodyTab.Location = new Point(4, 37);
+            bodyTab.Name = "bodyTab";
+            bodyTab.Padding = new Padding(3);
+            bodyTab.Size = new Size(1320, 515);
+            bodyTab.TabIndex = 0;
+            bodyTab.Text = "Body";
+            bodyTab.UseVisualStyleBackColor = true;
+            // 
+            // resultsTab
+            // 
+            resultsTab.Controls.Add(resultsText);
+            resultsTab.Location = new Point(4, 24);
+            resultsTab.Name = "resultsTab";
+            resultsTab.Padding = new Padding(3);
+            resultsTab.Size = new Size(1320, 528);
+            resultsTab.TabIndex = 1;
+            resultsTab.Text = "Results";
+            resultsTab.UseVisualStyleBackColor = true;
+            // 
+            // resultsText
+            // 
+            resultsText.BackColor = Color.White;
+            resultsText.BorderStyle = BorderStyle.FixedSingle;
+            resultsText.Dock = DockStyle.Fill;
+            resultsText.Location = new Point(3, 3);
+            resultsText.Multiline = true;
+            resultsText.Name = "resultsText";
+            resultsText.ReadOnly = true;
+            resultsText.ScrollBars = ScrollBars.Both;
+            resultsText.Size = new Size(1314, 522);
+            resultsText.TabIndex = 5;
+            // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
             ClientSize = new Size(1371, 738);
+            Controls.Add(callData);
             Controls.Add(httpMethodSelection);
-            Controls.Add(resultsLabel);
             Controls.Add(statusStrip);
-            Controls.Add(resultsText);
             Controls.Add(callApi);
             Controls.Add(apiText);
             Controls.Add(apiLabel);
@@ -150,6 +176,9 @@
             Text = "Postman Clone by Adrian Puscasu";
             statusStrip.ResumeLayout(false);
             statusStrip.PerformLayout();
+            callData.ResumeLayout(false);
+            resultsTab.ResumeLayout(false);
+            resultsTab.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -160,10 +189,12 @@
         private Label apiLabel;
         private TextBox apiText;
         private Button callApi;
-        private TextBox resultsText;
         private StatusStrip statusStrip;
-        private Label resultsLabel;
         private ToolStripStatusLabel systemStatus;
         private ComboBox httpMethodSelection;
+        private TabControl callData;
+        private TabPage bodyTab;
+        private TabPage resultsTab;
+        private TextBox resultsText;
     }
 }
